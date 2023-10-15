@@ -1,3 +1,4 @@
+const serve=require('./websocket/login/login')
 const Koa = require("koa");
 const router = require("./router/totalRouter");
 const {koaBody }= require("koa-body"); //解析表单数据
@@ -9,6 +10,9 @@ const refreshSecret='jwt_secret_refresh'
 const cors = require("koa2-cors");
 
 const static=require('koa-static')
+const WebSocket=require('ws')
+const server=require('http').createServer(app.callback())
+const wss=new WebSocket.Server({server})
 
 
 app.use(
@@ -72,5 +76,8 @@ app.use(router.routes());
 app.use(async (ctx) => {
   console.log("404");
 });
+
+
+
 
 app.listen(300);
