@@ -1,0 +1,34 @@
+export const informRouter={
+	path:'/oa/inform',
+	meta:{
+		title:"行政通知",
+		nav:true,
+		layout:'slider'
+	},
+	component:()=>import('./index'),
+	children:[{
+		path:'/oa/inform',
+		meta:{
+			title:"全部文章",
+			nav:true,
+			layout:'slider'
+		},
+		component:()=>import('./main')
+	},{
+		path:'/oa/inform/create',
+		meta:{
+			title:'发布文章',
+			nav:true,
+			layout:'slider'
+		},
+		component:()=>import('./create')
+	},{
+		path:'/oa/inform/manage',
+		meta:{
+			title:"管理文章",
+			nav:true,
+			layout:'slider'
+		},
+		component:()=>import('./manage')
+	}]
+}
