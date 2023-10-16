@@ -68,6 +68,7 @@ async function checkLogin1(loginData) {
         },
       };
     } else {
+		console.log(res,ischeck)
       return {
         msg: "登录失败",
         code: 201,
